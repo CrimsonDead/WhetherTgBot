@@ -12,9 +12,9 @@ namespace WhetherTgBot.Handlers
     {
         public static string GetByCity(string city)
         {
-            string url = string.Format($"http://api.openweathermap.org/data/2.5.weather?" +
-                $"q={city}&units=metric&cnt=1&" +
-                $"APPID={AppSettings.OpenWeatherApiKey}");
+            string url = string.Format($"https://api.openweathermap.org/data/2.5/weather?" +
+                $"q={city}&" +
+                $"appid={AppSettings.OpenWeatherApiKey}");
             using (WebClient client = new WebClient())
             {
                 string json = client.DownloadString(url);
